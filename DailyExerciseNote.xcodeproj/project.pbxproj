@@ -508,6 +508,7 @@
 				84074FCE188F5B87006527D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84074FCF188F5B87006527D6 /* Build configuration list for PBXNativeTarget "DailyExerciseNoteTests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +517,7 @@
 				84074FD1188F5B87006527D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
