@@ -28,6 +28,8 @@
 		84075007188F627A006527D6 /* right_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 84075002188F627A006527D6 /* right_arrow.png */; };
 		84075008188F627A006527D6 /* right_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84075003188F627A006527D6 /* right_arrow@2x.png */; };
 		8407500B188F752C006527D6 /* CountingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8407500A188F752C006527D6 /* CountingViewController.m */; };
+		84757658188F88E100DC5C2C /* fitus_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 84757657188F88E100DC5C2C /* fitus_background.png */; };
+		8475765A188F8A5C00DC5C2C /* glossy_button_blank_green_rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 84757659188F8A5C00DC5C2C /* glossy_button_blank_green_rectangle.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		84075003188F627A006527D6 /* right_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right_arrow@2x.png"; sourceTree = "<group>"; };
 		84075009188F752C006527D6 /* CountingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountingViewController.h; sourceTree = "<group>"; };
 		8407500A188F752C006527D6 /* CountingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountingViewController.m; sourceTree = "<group>"; };
+		84757657188F88E100DC5C2C /* fitus_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fitus_background.png; sourceTree = "<group>"; };
+		84757659188F8A5C00DC5C2C /* glossy_button_blank_green_rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glossy_button_blank_green_rectangle.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 		84074F91188F5B86006527D6 = {
 			isa = PBXGroup;
 			children = (
+				84757659188F8A5C00DC5C2C /* glossy_button_blank_green_rectangle.png */,
+				84757657188F88E100DC5C2C /* fitus_background.png */,
 				84074FFC188F627A006527D6 /* Source */,
 				84074FA3188F5B86006527D6 /* DailyExerciseNote */,
 				84074FC2188F5B87006527D6 /* DailyExerciseNoteTests */,
@@ -271,10 +277,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				84075006188F627A006527D6 /* left_arrow@2x.png in Resources */,
+				84757658188F88E100DC5C2C /* fitus_background.png in Resources */,
 				84074FB6188F5B87006527D6 /* Images.xcassets in Resources */,
 				84075008188F627A006527D6 /* right_arrow@2x.png in Resources */,
 				84075007188F627A006527D6 /* right_arrow.png in Resources */,
 				84074FA8188F5B86006527D6 /* InfoPlist.strings in Resources */,
+				8475765A188F8A5C00DC5C2C /* glossy_button_blank_green_rectangle.png in Resources */,
 				84075005188F627A006527D6 /* left_arrow.png in Resources */,
 				84074FB1188F5B86006527D6 /* Main.storyboard in Resources */,
 			);
