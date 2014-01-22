@@ -14,14 +14,6 @@
 
 @implementation NoteViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -44,22 +36,23 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 10;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NOTE_CELL" forIndexPath:indexPath];
-    NSString *dateString = [NSDateFormatter localizedStringFromDate:self.date
-                                                          dateStyle:NSDateFormatterShortStyle
-                                                          timeStyle:NSDateFormatterFullStyle];
-    NSLog(@"%@",dateString);
-    self.dateLabel.text = dateString;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NOTE_CELL"];
+
+//    NSString *dateString = [NSDateFormatter localizedStringFromDate:self.date
+//                                                          dateStyle:NSDateFormatterShortStyle
+//                                                          timeStyle:NSDateFormatterFullStyle];
+//    NSLog(@"%@",dateString);
+//    self.dateLabel.text = dateString;
     self.exerciseNameLabel.text = self.exerciseName;
     self.setCountLabel.text = [NSString stringWithFormat:@"%d", self.setCount];
     

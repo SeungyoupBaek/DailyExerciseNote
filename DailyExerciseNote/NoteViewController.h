@@ -13,7 +13,7 @@
 @property (strong, nonatomic) NSDate *date;
 @property (nonatomic) int setCount;
 @property (strong, nonatomic) NSString *exerciseName;
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *exerciseNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *setCountLabel;
 
