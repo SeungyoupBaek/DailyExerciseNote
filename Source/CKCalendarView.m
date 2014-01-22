@@ -130,7 +130,7 @@
 }
 
 - (id)initWithStartDay:(CKCalendarStartDay)firstDay {
-    return [self initWithStartDay:firstDay frame:CGRectMake(0, 60, 320, 320)];
+    return [self initWithStartDay:firstDay frame:CGRectMake(0, 120, 320, 320)];
 }
 
 - (void)_init:(CKCalendarStartDay)firstDay {
