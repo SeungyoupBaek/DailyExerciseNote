@@ -32,6 +32,9 @@
 		8475765A188F8A5C00DC5C2C /* glossy_button_blank_green_rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 84757659188F8A5C00DC5C2C /* glossy_button_blank_green_rectangle.png */; };
 		8475765C188F8B9100DC5C2C /* download-button-png-green-6913.png in Resources */ = {isa = PBXBuildFile; fileRef = 8475765B188F8B9100DC5C2C /* download-button-png-green-6913.png */; };
 		8475765F188F8E7E00DC5C2C /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8475765E188F8E7E00DC5C2C /* NoteViewController.m */; };
+		84757661188FA3CA00DC5C2C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84757660188FA3CA00DC5C2C /* libsqlite3.dylib */; };
+		84757665188FAE3500DC5C2C /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 84757664188FAE3500DC5C2C /* db.sqlite */; };
+		84757666188FAE3500DC5C2C /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 84757664188FAE3500DC5C2C /* db.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,8 @@
 		8475765B188F8B9100DC5C2C /* download-button-png-green-6913.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "download-button-png-green-6913.png"; sourceTree = "<group>"; };
 		8475765D188F8E7E00DC5C2C /* NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
 		8475765E188F8E7E00DC5C2C /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
+		84757660188FA3CA00DC5C2C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		84757664188FAE3500DC5C2C /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = db.sqlite; path = DailyExerciseNote/db.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84757661188FA3CA00DC5C2C /* libsqlite3.dylib in Frameworks */,
 				84074FFB188F5C8E006527D6 /* QuartzCore.framework in Frameworks */,
 				84074FA0188F5B86006527D6 /* CoreGraphics.framework in Frameworks */,
 				84074FA2188F5B86006527D6 /* UIKit.framework in Frameworks */,
@@ -108,6 +114,7 @@
 		84074F91188F5B86006527D6 = {
 			isa = PBXGroup;
 			children = (
+				84757664188FAE3500DC5C2C /* db.sqlite */,
 				8475765B188F8B9100DC5C2C /* download-button-png-green-6913.png */,
 				84757659188F8A5C00DC5C2C /* glossy_button_blank_green_rectangle.png */,
 				84757657188F88E100DC5C2C /* fitus_background.png */,
@@ -131,6 +138,7 @@
 		84074F9C188F5B86006527D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84757660188FA3CA00DC5C2C /* libsqlite3.dylib */,
 				84074FFA188F5C8E006527D6 /* QuartzCore.framework */,
 				84074F9D188F5B86006527D6 /* Foundation.framework */,
 				84074F9F188F5B86006527D6 /* CoreGraphics.framework */,
@@ -292,6 +300,7 @@
 				84074FA8188F5B86006527D6 /* InfoPlist.strings in Resources */,
 				8475765C188F8B9100DC5C2C /* download-button-png-green-6913.png in Resources */,
 				8475765A188F8A5C00DC5C2C /* glossy_button_blank_green_rectangle.png in Resources */,
+				84757665188FAE3500DC5C2C /* db.sqlite in Resources */,
 				84075005188F627A006527D6 /* left_arrow.png in Resources */,
 				84074FB1188F5B86006527D6 /* Main.storyboard in Resources */,
 			);
@@ -302,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84074FC7188F5B87006527D6 /* InfoPlist.strings in Resources */,
+				84757666188FAE3500DC5C2C /* db.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

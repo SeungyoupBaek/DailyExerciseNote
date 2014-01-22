@@ -9,9 +9,6 @@
 #import "NoteViewController.h"
 
 @interface NoteViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *exerciseNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *setCountLabel;
 
 @end
 

@@ -8,6 +8,7 @@
 
 #import "CountingViewController.h"
 #import "NoteViewController.h"
+#import <sqlite3.h>
 
 
 @interface CountingViewController () <UIPickerViewDataSource, UIPickerViewDelegate>{
@@ -17,13 +18,61 @@
     UIActionSheet *_sheet;
     int _count;
     float _height;
+    sqlite3 *db;
 }
+@property (weak, nonatomic) IBOutlet UILabel *exerciseLabel;
 @property (weak, nonatomic) IBOutlet UIButton *exerciseButton;
 @property (weak, nonatomic) IBOutlet UILabel *setLabel;
 
 @end
 
 @implementation CountingViewController
+
+// 데이터베이스 오픈, 없으면 새로 만든다.
+-(void)openDB{
+    // 데이터베이스 파일경로 구하기
+    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString* dbFilePath = [docPath stringByAppendingPathComponent:@"db.sqlite"];
+    
+    // 데이터 베이스 파일 체크
+    NSFileManager* fm = [NSFileManager defaultManager];
+    BOOL existFile = [fm fileExistsAtPath:dbFilePath];
+    
+    // 데이터 베이스 오픈
+    int ret = sqlite3_open([dbFilePath UTF8String], &db);
+    NSAssert1(SQLITE_OK==ret, @"Error on opening Database : %s", sqlite3_errmsg(db));
+    NSLog(@"Success on Openning Database");
+    
+    // 새롭게 데이터베이스를 만들었으면 테이블을 생성한다.
+    if (NO == existFile) {
+        //테이블 생성
+        const char* creatSQL = "CREATE TABLE IF NOT EXISTS exercise(date DATETIME, exerciseName CHAR, setCount INTEGER)";
+        char* errMsg;
+        ret = sqlite3_exec(db, creatSQL, NULL, NULL, &errMsg);
+        if (ret != SQLITE_OK) {
+            [fm removeItemAtPath:dbFilePath error:nil];
+        }
+        NSAssert1(SQLITE_OK==ret, @"Error on creating table : %s", errMsg);
+        NSLog(@"creating table with ret : %d", ret);
+    }
+}
+
+// 새로운 데이터를 데이터베이스에 저장한다.
+-(void)addData:(NSDate *)date Name:(NSString *)exercise Count:(int)count{
+    NSLog(@"adding data : %@, %@, %d", date, exercise, count);
+    
+    // sqlite3_exec로 실행하기
+    NSString* sql = [NSString stringWithFormat:@"INSERT INTO exercise(DATE, EXERCISENAME, SETCOUNT) VALUES('%@', '%@', '%d')", date, exercise, count];
+    NSLog(@"sql : %@", sql);
+    
+    char* errMsg;
+    int ret = sqlite3_exec(db, [sql UTF8String], NULL, nil, &errMsg);
+    
+    if (SQLITE_OK != ret) {
+        NSLog(@"Error on Insert New data : %s", errMsg);
+    }
+}
+
 - (IBAction)countAction:(id)sender {
     _count++;
     NSString *countStr = [NSString stringWithFormat:@"%d", _count];
@@ -40,7 +89,6 @@
 
 - (void)handleDone:(id)sender{
     [_sheet dismissWithClickedButtonIndex:0 animated:YES];
-    
 }
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
@@ -50,6 +98,7 @@
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     NSString *selectStr = [_exerciseList objectAtIndex:row];
     self.exerciseButton.titleLabel.text = selectStr;
+    self.exerciseLabel.text = selectStr;
 }
 
 - (IBAction)showExerciseList:(id)sender {
@@ -96,7 +145,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _exerciseList = @[@"Squat", @"BenchPress", @"PullUp", @"DeadLift", @"LegLaise"];
+    [self openDB];
+    _exerciseList = @[@"Default", @"Squat", @"BenchPress", @"PullUp", @"DeadLift", @"LegLaise"];
 	// Do any additional setup after loading the view.
 }
 
@@ -108,9 +158,14 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NoteViewController *noteVC = segue.destinationViewController;
+    [self addData:self.date Name:self.exerciseLabel.text Count:_count];
     noteVC.date = self.date;
     noteVC.setCount = _count;
-    noteVC.exerciseName = self.exerciseButton.titleLabel.text;
+    noteVC.exerciseName = self.exerciseLabel.text;
 }
+- (IBAction)goToNote:(id)sender {
+        [self addData:self.date Name:self.exerciseLabel.text Count:_count];
+}
+
 
 @end
