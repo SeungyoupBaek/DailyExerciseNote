@@ -21,6 +21,12 @@
 		84074FBF188F5B87006527D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84074FA1188F5B86006527D6 /* UIKit.framework */; };
 		84074FC7188F5B87006527D6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84074FC5188F5B87006527D6 /* InfoPlist.strings */; };
 		84074FC9188F5B87006527D6 /* DailyExerciseNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84074FC8188F5B87006527D6 /* DailyExerciseNoteTests.m */; };
+		84074FFB188F5C8E006527D6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84074FFA188F5C8E006527D6 /* QuartzCore.framework */; };
+		84075004188F627A006527D6 /* CKCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84074FFE188F627A006527D6 /* CKCalendarView.m */; };
+		84075005188F627A006527D6 /* left_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 84075000188F627A006527D6 /* left_arrow.png */; };
+		84075006188F627A006527D6 /* left_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84075001188F627A006527D6 /* left_arrow@2x.png */; };
+		84075007188F627A006527D6 /* right_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 84075002188F627A006527D6 /* right_arrow.png */; };
+		84075008188F627A006527D6 /* right_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84075003188F627A006527D6 /* right_arrow@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,13 @@
 		84074FC4188F5B87006527D6 /* DailyExerciseNoteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DailyExerciseNoteTests-Info.plist"; sourceTree = "<group>"; };
 		84074FC6188F5B87006527D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		84074FC8188F5B87006527D6 /* DailyExerciseNoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyExerciseNoteTests.m; sourceTree = "<group>"; };
+		84074FFA188F5C8E006527D6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		84074FFD188F627A006527D6 /* CKCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKCalendarView.h; sourceTree = "<group>"; };
+		84074FFE188F627A006527D6 /* CKCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCalendarView.m; sourceTree = "<group>"; };
+		84075000188F627A006527D6 /* left_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_arrow.png; sourceTree = "<group>"; };
+		84075001188F627A006527D6 /* left_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_arrow@2x.png"; sourceTree = "<group>"; };
+		84075002188F627A006527D6 /* right_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_arrow.png; sourceTree = "<group>"; };
+		84075003188F627A006527D6 /* right_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right_arrow@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84074FFB188F5C8E006527D6 /* QuartzCore.framework in Frameworks */,
 				84074FA0188F5B86006527D6 /* CoreGraphics.framework in Frameworks */,
 				84074FA2188F5B86006527D6 /* UIKit.framework in Frameworks */,
 				84074F9E188F5B86006527D6 /* Foundation.framework in Frameworks */,
@@ -82,6 +96,7 @@
 		84074F91188F5B86006527D6 = {
 			isa = PBXGroup;
 			children = (
+				84074FFC188F627A006527D6 /* Source */,
 				84074FA3188F5B86006527D6 /* DailyExerciseNote */,
 				84074FC2188F5B87006527D6 /* DailyExerciseNoteTests */,
 				84074F9C188F5B86006527D6 /* Frameworks */,
@@ -101,6 +116,7 @@
 		84074F9C188F5B86006527D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84074FFA188F5C8E006527D6 /* QuartzCore.framework */,
 				84074F9D188F5B86006527D6 /* Foundation.framework */,
 				84074F9F188F5B86006527D6 /* CoreGraphics.framework */,
 				84074FA1188F5B86006527D6 /* UIKit.framework */,
@@ -150,6 +166,27 @@
 				84074FC5188F5B87006527D6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84074FFC188F627A006527D6 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				84074FFD188F627A006527D6 /* CKCalendarView.h */,
+				84074FFE188F627A006527D6 /* CKCalendarView.m */,
+				84074FFF188F627A006527D6 /* resources */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		84074FFF188F627A006527D6 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				84075000188F627A006527D6 /* left_arrow.png */,
+				84075001188F627A006527D6 /* left_arrow@2x.png */,
+				84075002188F627A006527D6 /* right_arrow.png */,
+				84075003188F627A006527D6 /* right_arrow@2x.png */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,8 +265,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84075006188F627A006527D6 /* left_arrow@2x.png in Resources */,
 				84074FB6188F5B87006527D6 /* Images.xcassets in Resources */,
+				84075008188F627A006527D6 /* right_arrow@2x.png in Resources */,
+				84075007188F627A006527D6 /* right_arrow.png in Resources */,
 				84074FA8188F5B86006527D6 /* InfoPlist.strings in Resources */,
+				84075005188F627A006527D6 /* left_arrow.png in Resources */,
 				84074FB1188F5B86006527D6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +292,7 @@
 			files = (
 				84074FB4188F5B86006527D6 /* ViewController.m in Sources */,
 				84074FAE188F5B86006527D6 /* AppDelegate.m in Sources */,
+				84075004188F627A006527D6 /* CKCalendarView.m in Sources */,
 				84074FAA188F5B86006527D6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
