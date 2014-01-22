@@ -1,5 +1,5 @@
 //
-//  CountingViewController.h
+//  NoteViewController.h
 //  DailyExerciseNote
 //
 //  Created by Youp on 2014. 1. 22..
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CountingViewController : UIViewController
+@interface NoteViewController : UITableViewController
 
 @property (strong, nonatomic) NSDate *date;
+@property (nonatomic) int setCount;
+@property (strong, nonatomic) NSString *exerciseName;
 
 @end

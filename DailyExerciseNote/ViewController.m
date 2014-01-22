@@ -26,6 +26,7 @@
 
 - (void)calendar:(CKCalendarView *)calendar didSelectDate:(NSDate *)date {
     CountingViewController *countingVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CountingVC"];
+    countingVC.date = date;
     [self.navigationController pushViewController:countingVC animated:YES];
 }
 

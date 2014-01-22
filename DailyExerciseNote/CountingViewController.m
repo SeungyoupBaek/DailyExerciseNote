@@ -7,6 +7,7 @@
 //
 
 #import "CountingViewController.h"
+#import "NoteViewController.h"
 
 
 @interface CountingViewController () <UIPickerViewDataSource, UIPickerViewDelegate>{
@@ -103,6 +104,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NoteViewController *noteVC = segue.destinationViewController;
+    noteVC.date = self.date;
+    noteVC.setCount = _count;
+    noteVC.exerciseName = self.exerciseButton.titleLabel.text;
 }
 
 @end
