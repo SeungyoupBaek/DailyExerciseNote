@@ -33,6 +33,10 @@
     
 }
 
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    return [_exerciseList objectAtIndex:row];
+}
+
 - (IBAction)showExerciseList:(id)sender {
     CGSize viewSize = self.view.bounds.size;
     
@@ -76,7 +80,6 @@
 {
     [super viewDidLoad];
     _exerciseList = @[@"Squat", @"BenchPress", @"PullUp", @"DeadLift", @"LegLaise"];
-    _picker = [[UIPickerView alloc] init];
 	// Do any additional setup after loading the view.
 }
 
