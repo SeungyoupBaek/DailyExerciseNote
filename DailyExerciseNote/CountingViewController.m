@@ -19,6 +19,9 @@
     int _count;
     float _height;
     sqlite3 *db;
+    NSMutableArray* _dateArr;
+    NSMutableArray* _exerciseArr;
+    NSMutableArray* _setCount;
 }
 @property (weak, nonatomic) IBOutlet UILabel *exerciseLabel;
 @property (weak, nonatomic) IBOutlet UIButton *exerciseButton;
@@ -146,6 +149,9 @@
 {
     [super viewDidLoad];
     [self openDB];
+    _dateArr = [[NSMutableArray alloc] init];
+    _exerciseArr = [[NSMutableArray alloc] init];
+    _setCount = [[NSMutableArray alloc] init];
     _exerciseList = @[@"Default", @"Squat", @"BenchPress", @"PullUp", @"DeadLift", @"LegLaise"];
 	// Do any additional setup after loading the view.
 }
@@ -159,12 +165,16 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NoteViewController *noteVC = segue.destinationViewController;
     [self addData:self.date Name:self.exerciseLabel.text Count:_count];
+    [noteVC.dateArr addObject:self.date];
+    [noteVC.exerciseArr addObject:self.exerciseLabel.text];
     noteVC.date = self.date;
     noteVC.setCount = _count;
     noteVC.exerciseName = self.exerciseLabel.text;
 }
 - (IBAction)goToNote:(id)sender {
-        [self addData:self.date Name:self.exerciseLabel.text Count:_count];
+    [self addData:self.date Name:self.exerciseLabel.text Count:_count];
+    [_dateArr addObject:self.date];
+    [_exerciseArr addObject:self.exerciseLabel.text];
 }
 
 

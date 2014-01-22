@@ -19,7 +19,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.dateArr = [[NSMutableArray alloc] init];
+    self.exerciseArr = [[NSMutableArray alloc] init];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -57,8 +58,8 @@
     UILabel *exerciseNameLabel = (UILabel *)[cell viewWithTag:2];
     UILabel *setCountLabel = (UILabel *)[cell viewWithTag:3];
     
-    dateLabel.text = dateString;
-    exerciseNameLabel.text = self.exerciseName;
+    dateLabel.text = dateString;//[self.dateArr lastObject];
+    exerciseNameLabel.text = self.exerciseName;//[self.exerciseArr lastObject];
     setCountLabel.text = [NSString stringWithFormat:@"%d", self.setCount];
     
     return cell;

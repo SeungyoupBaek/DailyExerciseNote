@@ -14,8 +14,7 @@
 @property (nonatomic) int setCount;
 @property (strong, nonatomic) NSString *exerciseName;
 
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *exerciseNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *setCountLabel;
+@property (strong, nonatomic) NSMutableArray* dateArr;
+@property (strong, nonatomic) NSMutableArray* exerciseArr;
 
 @end
