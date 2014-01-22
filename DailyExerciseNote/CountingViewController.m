@@ -50,7 +50,8 @@
         NSArray *items = [NSArray arrayWithObject:done];
         [toolbar setItems:items];
         _picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, toolbar.frame.size.height, viewSize.width, _picker.frame.size.height)];
-        
+        _picker.dataSource = self;
+        _picker.delegate = self;
         // 시트에 추가
         [_sheet addSubview:toolbar];
         [_sheet addSubview:_picker];
@@ -60,6 +61,7 @@
         
         // 액션시트크기와 위치계산용
         _height = toolbar.frame.size.height + _picker.frame.size.height;
+        [_picker reloadAllComponents];
     }
     
     [_sheet showInView:self.view];
