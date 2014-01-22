@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DailyExerciseNote/CountingViewController.m"
-            timestampString = "412057904.477668"
+            timestampString = "412059702.48337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "@implementation CountingViewController"
             landmarkType = "3">
          </BreakpointContent>

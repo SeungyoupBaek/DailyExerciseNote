@@ -11,14 +11,23 @@
 
 @interface CountingViewController () <UIPickerViewDataSource, UIPickerViewDelegate>{
     NSArray *_exerciseList;
+    NSArray *_weightList;
     UIPickerView *_picker;
     UIActionSheet *_sheet;
+    int _count;
     float _height;
 }
+@property (weak, nonatomic) IBOutlet UIButton *exerciseButton;
+@property (weak, nonatomic) IBOutlet UILabel *setLabel;
 
 @end
 
 @implementation CountingViewController
+- (IBAction)countAction:(id)sender {
+    _count++;
+    NSString *countStr = [NSString stringWithFormat:@"%d", _count];
+    self.setLabel.text = countStr;
+}
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 1;
@@ -35,6 +44,11 @@
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     return [_exerciseList objectAtIndex:row];
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    NSString *selectStr = [_exerciseList objectAtIndex:row];
+    self.exerciseButton.titleLabel.text = selectStr;
 }
 
 - (IBAction)showExerciseList:(id)sender {
