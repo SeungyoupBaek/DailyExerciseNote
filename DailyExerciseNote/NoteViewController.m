@@ -8,7 +8,8 @@
 
 #import "NoteViewController.h"
 
-@interface NoteViewController ()
+@interface NoteViewController ()<UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) IBOutlet UITableView *table;
 
 @end
 
@@ -48,13 +49,17 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NOTE_CELL"];
 
-//    NSString *dateString = [NSDateFormatter localizedStringFromDate:self.date
-//                                                          dateStyle:NSDateFormatterShortStyle
-//                                                          timeStyle:NSDateFormatterFullStyle];
-//    NSLog(@"%@",dateString);
-//    self.dateLabel.text = dateString;
-    self.exerciseNameLabel.text = self.exerciseName;
-    self.setCountLabel.text = [NSString stringWithFormat:@"%d", self.setCount];
+    NSString *dateString = [NSDateFormatter localizedStringFromDate:self.date
+                                                          dateStyle:NSDateFormatterShortStyle
+                                                          timeStyle:NSDateFormatterFullStyle];
+    NSLog(@"%@",dateString);
+    UILabel *dateLabel = (UILabel *)[cell viewWithTag:1];
+    UILabel *exerciseNameLabel = (UILabel *)[cell viewWithTag:2];
+    UILabel *setCountLabel = (UILabel *)[cell viewWithTag:3];
+    
+    dateLabel.text = dateString;
+    exerciseNameLabel.text = self.exerciseName;
+    setCountLabel.text = [NSString stringWithFormat:@"%d", self.setCount];
     
     return cell;
 }
