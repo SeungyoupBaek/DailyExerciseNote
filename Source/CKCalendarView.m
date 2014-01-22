@@ -130,7 +130,7 @@
 }
 
 - (id)initWithStartDay:(CKCalendarStartDay)firstDay {
-    return [self initWithStartDay:firstDay frame:CGRectMake(0, 40, 320, 320)];
+    return [self initWithStartDay:firstDay frame:CGRectMake(0, 60, 320, 320)];
 }
 
 - (void)_init:(CKCalendarStartDay)firstDay {
@@ -331,6 +331,7 @@
     }
 }
 
+
 - (void)_updateDayOfWeekLabels {
     NSArray *weekdays = [self.dateFormatter shortWeekdaySymbols];
     // adjust array depending on which weekday should be first
@@ -482,6 +483,7 @@
     [self selectDate:date makeVisible:YES];
     [self.delegate calendar:self didSelectDate:date];
     [self setNeedsLayout];
+    
 }
 
 #pragma mark - Theming getters/setters

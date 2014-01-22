@@ -8,6 +8,7 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import "ViewController.h"
 #import "CKCalendarView.h"
+#import "CountingViewController.h"
 
 @interface ViewController ()<CKCalendarDelegate>
 
@@ -24,7 +25,8 @@
 
 
 - (void)calendar:(CKCalendarView *)calendar didSelectDate:(NSDate *)date {
-    
+    CountingViewController *countingVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CountingVC"];
+    [self.navigationController pushViewController:countingVC animated:YES];
 }
 
 
